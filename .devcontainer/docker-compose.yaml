@@ -1,0 +1,27 @@
+services:
+  devcontainer:
+    build: 
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    # network_mode: service:db
+    command: sleep infinity
+
+  python-app:
+    build: 
+      context: ..
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis-db
+  redis-db:
+    image: redis:latest
+    # volumes:
+    #   - ../src:/var/lib/redis/data
+
+# volumes:
+#   postgres-data:
