@@ -16,7 +16,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "bash /app/scripts/install_githooks.sh /app",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -25,9 +25,9 @@
 				"terminal.integrated.defaultProfile.linux": "zsh"
 			},
 			"extensions": [
-				"ms-azuretools.vscode-docker",
-				"ms-python.python",
-				"eamodio.gitlens"
+				"ms-python.python", // Python
+				"eamodio.gitlens", // GitLens
+				"github.vscode-github-actions" // GitHub Actions
 			]
 		}
 	}

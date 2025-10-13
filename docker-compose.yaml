@@ -6,11 +6,11 @@ services:
     command: sleep infinity
     volumes:
       - .:/app
-    # network_mode: service:db
     ports:
       - "8000:8000"
     depends_on:
       - redis-db
+
   redis-db:
     image: redis:latest
     volumes:

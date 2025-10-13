@@ -6,13 +6,14 @@ COPY --from=ghcr.io/astral-sh/uv:0.9.2 /uv /uvx /bin/
 # Set working directory
 WORKDIR /app
 
+
 # Install dependencies
 COPY ./pyproject.toml /app/pyproject.toml
 COPY ./uv.lock /app/uv.lock
 RUN uv sync --locked --no-dev --no-cache
 
-# Copy application files
-COPY ./src /app/src
+# Copy files
+COPY . /app
 
 # Expose the port the app runs on
 EXPOSE 8000
