@@ -2,7 +2,8 @@ services:
   fastapi:
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev # Dev Dockerfile
+      # dockerfile: Dockerfile.prod # Production Dockerfile
     command: sleep infinity
     volumes:
       - .:/app
