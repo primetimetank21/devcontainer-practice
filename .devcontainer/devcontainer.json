@@ -16,7 +16,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash /app/scripts/install_githooks.sh /app",
+	// "postCreateCommand": "./scripts/install_githooks.sh /app && make install",
+	"postCreateCommand": "./scripts/install_githooks.sh /app && uv sync --locked",
 
 	// Configure tool-specific properties.
 	"customizations": {
