@@ -1,4 +1,4 @@
-# # This Dockerfile sets up the Dev Environment
+# This Dockerfile sets up the Dev Environment
 FROM mcr.microsoft.com/devcontainers/base:alpine-3.20
 
 # Install uv

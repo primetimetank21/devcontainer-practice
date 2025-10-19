@@ -21,6 +21,8 @@ sb() {\n\
 # Aliases\n\
 alias py='python'\n\
 alias gs='git status'\n\
+alias ga='git add'\n\
+alias gl='git log'\n\
 alias gf='git fetch'\n\
 alias gfp='git fetch --prune'\n\
 alias ggs='git stash'\n\

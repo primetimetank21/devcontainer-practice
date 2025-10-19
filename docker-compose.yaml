@@ -1,6 +1,6 @@
 services:
   fastapi:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.dev # Dev Dockerfile
       # dockerfile: Dockerfile.prod # Production Dockerfile
