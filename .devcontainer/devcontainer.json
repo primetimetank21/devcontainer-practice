@@ -21,7 +21,7 @@
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "./scripts/install_githooks.sh /app && ./scripts/add_python_venv_to_source.sh",
+	"postCreateCommand": "./scripts/install_githooks.sh /app && ./scripts/add_commands_to_zshrc.sh /app",
 
 	// Configure tool-specific properties.
 	"customizations": {
