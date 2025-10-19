@@ -13,8 +13,17 @@ ENV UV_COMPILE_BYTECODE=1
 # Copy from the cache instead of linking since it's a mounted volume
 ENV UV_LINK_MODE=copy
 
-# Place executables in the environment at the front of the path
-# ENV PATH="/app/.venv/bin:$PATH"
+# Set the target location for the virtual environment to a non-mounted path
+ENV UV_PROJECT_ENVIRONMENT="../.venv"
+ENV PATH="../.venv/bin:$PATH"
+
+# Copy dependency files and install dependencies
+COPY pyproject.toml /app/
+COPY uv.lock /app/
+RUN uv sync --locked
+
+# Copy rest of source code
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 8000

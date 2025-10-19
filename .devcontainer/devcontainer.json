@@ -1,10 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/alpine
 {
+	// Name of Dev Container to be displayed
 	"name": "Python (FastAPI) Dev Container",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	// "image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
 
+	// Use a Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"dockerComposeFile": "../docker-compose.yaml",
 	"service": "fastapi",
 	"workspaceFolder": "/app",
@@ -16,8 +16,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "./scripts/install_githooks.sh /app && make install",
-	"postCreateCommand": "./scripts/install_githooks.sh /app && uv sync --locked",
+	"postCreateCommand": "./scripts/install_githooks.sh /app && ./scripts/add_python_venv_to_source.sh",
 
 	// Configure tool-specific properties.
 	"customizations": {

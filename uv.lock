@@ -1,31 +1,6 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
-
-[[package]]
-name = "alpine"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "fastapi" },
-    { name = "redis" },
-    { name = "uvicorn" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.119.0" },
-    { name = "redis", specifier = ">=6.4.0" },
-    { name = "uvicorn", specifier = ">=0.37.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "ruff", specifier = ">=0.14.0" }]
 
 [[package]]
 name = "annotated-types"
@@ -93,6 +68,31 @@ sdist = { url = "https://files.pythonhosted.org/packages/0a/f9/5c5bcce82a7997cc0
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ce/70/584c4d7cad80f5e833715c0a29962d7c93b4d18eed522a02981a6d1b6ee5/fastapi-0.119.0-py3-none-any.whl", hash = "sha256:90a2e49ed19515320abb864df570dd766be0662c5d577688f1600170f7f73cf2", size = 107095, upload-time = "2025-10-11T17:13:39.048Z" },
 ]
+
+[[package]]
+name = "fastapi-dockerized"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "fastapi" },
+    { name = "redis" },
+    { name = "uvicorn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.119.0" },
+    { name = "redis", specifier = ">=6.4.0" },
+    { name = "uvicorn", specifier = ">=0.37.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ruff", specifier = ">=0.14.0" }]
 
 [[package]]
 name = "h11"
