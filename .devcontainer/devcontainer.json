@@ -15,6 +15,11 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
+	// Use 'mounts' to add additional volumes to the container.
+	"mounts": [
+		"type=bind,source=/home/${localEnv:USER}/.ssh,target=/home/vscode/.ssh,readonly" // Mount SSH keys
+	],
+
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "./scripts/install_githooks.sh /app && ./scripts/add_python_venv_to_source.sh",
 
