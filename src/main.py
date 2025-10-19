@@ -13,7 +13,9 @@ async def read_root():
     LAST_LOGIN_KEY: Final[str] = "last_login"
     CURRENT_LOGIN_KEY: Final[str] = "current_login"
 
-    login_time: str = datetime.now(tz=timezone.utc).strftime("%d_%B_%Y_at_%H:%M:%S")
+    login_time: str = (
+        datetime.now(tz=timezone.utc).astimezone().strftime("%d_%B_%Y_at_%H:%M:%S")
+    )
 
     last_logged_in: ResponseT = r.get(LAST_LOGIN_KEY)
     print(f"{last_logged_in=}")
